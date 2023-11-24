@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
+    <ProjectConfiguration Include="DebugDLL|Win32">
+      <Configuration>DebugDLL</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
+    <ProjectConfiguration Include="ReleaseDLL|Win32">
+      <Configuration>ReleaseDLL</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
+    <ProjectConfiguration Include="DebugDLL|x64">
+      <Configuration>DebugDLL</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
+    <ProjectConfiguration Include="ReleaseDLL|x64">
+      <Configuration>ReleaseDLL</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -26,26 +26,26 @@
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
@@ -57,32 +57,32 @@
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
@@ -94,7 +94,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -110,7 +110,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
@@ -123,13 +123,13 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\..\CommonLib\tinyxml2\$(Platform)\$(Configuration)\TinyXml2Lib.lib;..\..\PCL 1.12.1\lib\pcl_commond.lib;..\..\PCL 1.12.1\lib\pcl_iod.lib;..\..\PCL 1.12.1\lib\pcl_featuresd.lib;..\..\PCL 1.12.1\lib\pcl_filtersd.lib;..\..\PCL 1.12.1\lib\pcl_io_plyd.lib;..\..\PCL 1.12.1\lib\pcl_kdtreed.lib;..\..\PCL 1.12.1\lib\pcl_keypointsd.lib;..\..\PCL 1.12.1\lib\pcl_mld.lib;..\..\PCL 1.12.1\lib\pcl_octreed.lib;..\..\PCL 1.12.1\lib\pcl_outofcored.lib;..\..\PCL 1.12.1\lib\pcl_peopled.lib;..\..\PCL 1.12.1\lib\pcl_recognitiond.lib;..\..\PCL 1.12.1\lib\pcl_registrationd.lib;..\..\PCL 1.12.1\lib\pcl_sample_consensusd.lib;..\..\PCL 1.12.1\lib\pcl_searchd.lib;..\..\PCL 1.12.1\lib\pcl_segmentationd.lib;..\..\PCL 1.12.1\lib\pcl_stereod.lib;..\..\PCL 1.12.1\lib\pcl_surfaced.lib;..\..\PCL 1.12.1\lib\pcl_trackingd.lib;..\..\PCL 1.12.1\lib\pcl_visualizationd.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkViewsContext2D-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkChartsCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingOpenGL2-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingImage-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingContextOpenGL2-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionImage-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingLOD-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkViewsCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionWidgets-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersModeling-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionStyle-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersExtraction-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOLegacy-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingAnnotation-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkImagingSources-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOImage-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingContext2D-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingFreeType-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkfreetype-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkzlib-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingUI-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkImagingCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonColor-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersGeometry-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersSources-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersGeneral-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonComputationalGeometry-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonExecutionModel-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonDataModel-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonMisc-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonTransforms-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonMath-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtksys-9.1d.lib;..\..\PCL 1.12.1\3rdParty\Boost\lib\libboost_filesystem-vc142-mt-gd-x64-1_78.lib;..\..\PCL 1.12.1\3rdParty\OpenNI2\x64\Debug\opennurbs_public_staticlib.lib;Shlwapi.lib;..\..\CommonLib\xerces-c-3.2.3\lib\src\Debug\xerces-c_3d.lib;..\..\CommonLib\libE57Format\Lib\Debug\E57Format-d.lib;..\..\CommonLib\CLogger\x64\Debug\CLogger.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\CommonLib\tinyxml2\$(Platform)\Debug\TinyXml2Lib.lib;..\..\PCL 1.12.1\lib\pcl_commond.lib;..\..\PCL 1.12.1\lib\pcl_iod.lib;..\..\PCL 1.12.1\lib\pcl_featuresd.lib;..\..\PCL 1.12.1\lib\pcl_filtersd.lib;..\..\PCL 1.12.1\lib\pcl_io_plyd.lib;..\..\PCL 1.12.1\lib\pcl_kdtreed.lib;..\..\PCL 1.12.1\lib\pcl_keypointsd.lib;..\..\PCL 1.12.1\lib\pcl_mld.lib;..\..\PCL 1.12.1\lib\pcl_octreed.lib;..\..\PCL 1.12.1\lib\pcl_outofcored.lib;..\..\PCL 1.12.1\lib\pcl_peopled.lib;..\..\PCL 1.12.1\lib\pcl_recognitiond.lib;..\..\PCL 1.12.1\lib\pcl_registrationd.lib;..\..\PCL 1.12.1\lib\pcl_sample_consensusd.lib;..\..\PCL 1.12.1\lib\pcl_searchd.lib;..\..\PCL 1.12.1\lib\pcl_segmentationd.lib;..\..\PCL 1.12.1\lib\pcl_stereod.lib;..\..\PCL 1.12.1\lib\pcl_surfaced.lib;..\..\PCL 1.12.1\lib\pcl_trackingd.lib;..\..\PCL 1.12.1\lib\pcl_visualizationd.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkViewsContext2D-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkChartsCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingOpenGL2-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingImage-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingContextOpenGL2-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionImage-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingLOD-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkViewsCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionWidgets-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersModeling-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionStyle-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersExtraction-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOLegacy-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingAnnotation-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkImagingSources-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOImage-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingContext2D-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingFreeType-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkfreetype-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkzlib-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingUI-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkImagingCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonColor-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersGeometry-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersSources-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersGeneral-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonComputationalGeometry-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersCore-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonExecutionModel-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonDataModel-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonMisc-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonTransforms-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonMath-9.1d.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtksys-9.1d.lib;..\..\PCL 1.12.1\3rdParty\Boost\lib\libboost_filesystem-vc142-mt-gd-x64-1_78.lib;..\..\PCL 1.12.1\3rdParty\OpenNI2\x64\Debug\opennurbs_public_staticlib.lib;Shlwapi.lib;..\..\CommonLib\xerces-c-3.2.3\lib\src\Debug\xerces-c_3d.lib;..\..\CommonLib\libE57Format\Lib\Debug\E57Format-d.lib;..\..\CommonLib\CLogger\x64\Debug\CLogger.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy  $(OutputPath)$(ProjectName).dll D:\Andrea\Dev\.NET\PointCloudLauncher\PointCloudLauncher\bin\Debug  /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -148,7 +148,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\..\CommonLib\tinyxml2\$(Platform)\$(Configuration)\TinyXml2Lib.lib;..\..\PCL 1.12.1\lib\pcl_common.lib;..\..\PCL 1.12.1\lib\pcl_io.lib;..\..\PCL 1.12.1\lib\pcl_features.lib;..\..\PCL 1.12.1\lib\pcl_filters.lib;..\..\PCL 1.12.1\lib\pcl_io_ply.lib;..\..\PCL 1.12.1\lib\pcl_kdtree.lib;..\..\PCL 1.12.1\lib\pcl_keypoints.lib;..\..\PCL 1.12.1\lib\pcl_ml.lib;..\..\PCL 1.12.1\lib\pcl_octree.lib;..\..\PCL 1.12.1\lib\pcl_outofcore.lib;..\..\PCL 1.12.1\lib\pcl_people.lib;..\..\PCL 1.12.1\lib\pcl_recognition.lib;..\..\PCL 1.12.1\lib\pcl_registration.lib;..\..\PCL 1.12.1\lib\pcl_sample_consensus.lib;..\..\PCL 1.12.1\lib\pcl_search.lib;..\..\PCL 1.12.1\lib\pcl_segmentation.lib;..\..\PCL 1.12.1\lib\pcl_stereo.lib;..\..\PCL 1.12.1\lib\pcl_surface.lib;..\..\PCL 1.12.1\lib\pcl_tracking.lib;..\..\PCL 1.12.1\lib\pcl_visualization.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkViewsContext2D-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkChartsCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingOpenGL2-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingImage-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingContextOpenGL2-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionImage-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingLOD-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkViewsCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionWidgets-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersModeling-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionStyle-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersExtraction-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOLegacy-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingAnnotation-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkImagingSources-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOImage-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingContext2D-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingFreeType-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkfreetype-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkzlib-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingUI-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkImagingCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonColor-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersGeometry-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersSources-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersGeneral-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonComputationalGeometry-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonExecutionModel-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonDataModel-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonMisc-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonTransforms-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonMath-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtksys-9.1.lib;..\..\PCL 1.12.1\3rdParty\Boost\lib\libboost_filesystem-vc142-mt-x64-1_78.lib;..\..\PCL 1.12.1\3rdParty\OpenNI2\x64\Release\opennurbs_public_staticlib.lib;Shlwapi.lib;..\..\CommonLib\xerces-c-3.2.3\lib\src\Release\xerces-c_3.lib;..\..\CommonLib\libE57Format\Lib\Release\E57Format.lib;..\..\CommonLib\CLogger\x64\Release\CLogger.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\CommonLib\tinyxml2\$(Platform)\Release\TinyXml2Lib.lib;..\..\PCL 1.12.1\lib\pcl_common.lib;..\..\PCL 1.12.1\lib\pcl_io.lib;..\..\PCL 1.12.1\lib\pcl_features.lib;..\..\PCL 1.12.1\lib\pcl_filters.lib;..\..\PCL 1.12.1\lib\pcl_io_ply.lib;..\..\PCL 1.12.1\lib\pcl_kdtree.lib;..\..\PCL 1.12.1\lib\pcl_keypoints.lib;..\..\PCL 1.12.1\lib\pcl_ml.lib;..\..\PCL 1.12.1\lib\pcl_octree.lib;..\..\PCL 1.12.1\lib\pcl_outofcore.lib;..\..\PCL 1.12.1\lib\pcl_people.lib;..\..\PCL 1.12.1\lib\pcl_recognition.lib;..\..\PCL 1.12.1\lib\pcl_registration.lib;..\..\PCL 1.12.1\lib\pcl_sample_consensus.lib;..\..\PCL 1.12.1\lib\pcl_search.lib;..\..\PCL 1.12.1\lib\pcl_segmentation.lib;..\..\PCL 1.12.1\lib\pcl_stereo.lib;..\..\PCL 1.12.1\lib\pcl_surface.lib;..\..\PCL 1.12.1\lib\pcl_tracking.lib;..\..\PCL 1.12.1\lib\pcl_visualization.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkViewsContext2D-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkChartsCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingOpenGL2-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingImage-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingContextOpenGL2-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionImage-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingLOD-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkViewsCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionWidgets-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersModeling-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkInteractionStyle-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersExtraction-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOLegacy-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingAnnotation-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkImagingSources-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkIOImage-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingContext2D-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingFreeType-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkfreetype-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkzlib-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingUI-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkImagingCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkRenderingCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonColor-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersGeometry-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersSources-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersGeneral-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonComputationalGeometry-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkFiltersCore-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonExecutionModel-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonDataModel-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonMisc-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonTransforms-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtkCommonMath-9.1.lib;..\..\PCL 1.12.1\3rdParty\VTK\lib\vtksys-9.1.lib;..\..\PCL 1.12.1\3rdParty\Boost\lib\libboost_filesystem-vc142-mt-x64-1_78.lib;..\..\PCL 1.12.1\3rdParty\OpenNI2\x64\Release\opennurbs_public_staticlib.lib;Shlwapi.lib;..\..\CommonLib\xerces-c-3.2.3\lib\src\Release\xerces-c_3.lib;..\..\CommonLib\libE57Format\Lib\Release\E57Format.lib;..\..\CommonLib\CLogger\x64\Release\CLogger.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy  $(OutputPath)$(ProjectName).dll D:\Andrea\Dev\C++\PointCloud\Package\Bin /Y
