@@ -155,7 +155,8 @@
     </Link>
     <PostBuildEvent>
       <Command>xcopy  $(OutputPath)$(ProjectName).dll $(ProjectDir)..\Package\Bin /Y
-xcopy  $(OutputPath)$(ProjectName).dll $(ProjectDir)..\..\..\.NET\PointCloudLauncher\PointCloudLauncher\bin\Debug /Y</Command>
+xcopy  $(OutputPath)$(ProjectName).dll $(ProjectDir)..\..\..\.NET\PointCloudLauncher\PointCloudLauncher\bin\Debug /Y
+xcopy  $(OutputPath)$(ProjectName).dll $(ProjectDir)..\..\..\.NET\PointCloudLauncher\PointCloudLauncher\bin\Release /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
