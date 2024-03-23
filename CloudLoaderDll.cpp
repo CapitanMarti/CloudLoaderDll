@@ -64,6 +64,19 @@ extern "C" __declspec(dllexport) int* CloudLoader(const char* pFileName)
 
 }
 
+extern "C" __declspec(dllexport) int* GetPointList(const int* pPointer, int& nPoint)
+{
+    PointCloud<PointType>* pCloudObj = (PointCloud<PointType>*)pPointer;
+    //PointCloud<PointType>::Ptr pCloud(pCloudObj);
+    static PointCloud<PointType>::Ptr pCloud(pCloudObj);
+
+    nPoint = pCloud->points.size();
+
+    int* piTmp = (int*)(&(pCloud->points[0]));
+
+    return piTmp;
+}
+
 extern "C" __declspec(dllexport) void TestCloudPointer(const int* pPointer)
 {
     PointCloud<PointType>* pCloudObj = (PointCloud<PointType>*)pPointer;
