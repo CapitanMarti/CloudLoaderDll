@@ -145,6 +145,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <Optimization>MaxSpeed</Optimization>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,6 +159,9 @@
 xcopy  $(OutputPath)$(ProjectName).dll $(ProjectDir)..\..\..\.NET\PointCloudLauncher\PointCloudLauncher\bin\Debug /Y
 xcopy  $(OutputPath)$(ProjectName).dll $(ProjectDir)..\..\..\.NET\PointCloudLauncher\PointCloudLauncher\bin\Release /Y</Command>
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CloudLoaderDll.cpp" />
