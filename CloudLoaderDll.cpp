@@ -15,6 +15,8 @@
 using namespace pcl;
 using namespace std;
 
+static int s_nIter = 0;
+static vector<PointCloud<PointType>::Ptr> a_sPointCloudStaticArray;
 
 
 extern "C" __declspec(dllexport) int* CloudLoader(const char* pFileName)
@@ -60,20 +62,32 @@ extern "C" __declspec(dllexport) int* CloudLoader(const char* pFileName)
     _CLogger("... finished!" << endl << endl );
     _CLOGGER_END_;
 
+    static PointCloud<PointType>::Ptr pCloudStatic(pCloud);
+
     return (int*)(pCloud);
 
 }
 
 extern "C" __declspec(dllexport) int* GetPointList(const int* pPointer, int& nPoint)
 {
+    // Inizializzazione Logger
+    WCHAR wPointCludName[32] = L"PointCloud_SharedMemory";
+    WCHAR wPointMutexName[32] = L"PointCloud_SharedMutex";
+    _CLOGGER_INIT_(true, string(""), wPointCludName, 1024 * 128, wPointMutexName);
+
     PointCloud<PointType>* pCloudObj = (PointCloud<PointType>*)pPointer;
     //PointCloud<PointType>::Ptr pCloud(pCloudObj);
-    static PointCloud<PointType>::Ptr pCloud(pCloudObj);
+//    static PointCloud<PointType>::Ptr pCloud(pCloudObj);
+     PointCloud<PointType>::Ptr* pCloud =new PointCloud<PointType>::Ptr(pCloudObj);
 
-    nPoint = pCloud->points.size();
+//    nPoint = pCloud->points.size();
+    nPoint = (*pCloud)->points.size();
+    _CLogger("Da GetPointList, Number of point: " << nPoint << endl);
 
-    int* piTmp = (int*)(&(pCloud->points[0]));
+//    int* piTmp = (int*)(&(pCloud->points[0]));
+    int* piTmp = (int*)(&((*pCloud)->points[0]));
 
+    _CLOGGER_END_;
     return piTmp;
 }
 
@@ -94,3 +108,25 @@ extern "C" __declspec(dllexport) void TestCloudPointer(const int* pPointer)
     //++++++++++++++++++++++++++++++++
 }
 
+extern "C" __declspec(dllexport) int FreeMemory(const int* pPointer)
+{
+    if (pPointer == NULL)
+        return 0;
+    try
+    {
+        /*
+        PointCloud<PointType>* pCloudObj = (PointCloud<PointType>*)pPointer;
+        delete pCloudObj;
+        */
+        PointCloud<PointType>* pCloudObj = (PointCloud<PointType>*)pPointer;
+        PointCloud<PointType>::Ptr pCloud(pCloudObj);
+        pCloud.reset();
+
+        return 0;
+    }
+    catch (...)
+    {
+        return 1;
+    }
+
+}
