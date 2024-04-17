@@ -76,11 +76,8 @@ extern "C" __declspec(dllexport) int* GetPointList(const int* pPointer, int& nPo
     _CLOGGER_INIT_(true, string(""), wPointCludName, 1024 * 128, wPointMutexName);
 
     PointCloud<PointType>* pCloudObj = (PointCloud<PointType>*)pPointer;
-    //PointCloud<PointType>::Ptr pCloud(pCloudObj);
-//    static PointCloud<PointType>::Ptr pCloud(pCloudObj);
-     PointCloud<PointType>::Ptr* pCloud =new PointCloud<PointType>::Ptr(pCloudObj);
+    PointCloud<PointType>::Ptr* pCloud =new PointCloud<PointType>::Ptr(pCloudObj);
 
-//    nPoint = pCloud->points.size();
     nPoint = (*pCloud)->points.size();
     _CLogger("Da GetPointList, Number of point: " << nPoint << endl);
 
